@@ -1,0 +1,69 @@
+<section class="section">
+    <div class="container">
+        <div fxFlex.gt-xs="30%">
+            <h1 class="title is-3">Commande</h1>
+            <table class="table is-striped center">
+                <thead>
+                    <tr>
+                        <th>Plateau</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elem of commande; let index = index">
+                        <td>{{elem.nomPlateau}}</td>
+                        <td>{{elem.prix}}€</td>
+                        <td>{{elem.quantite}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+    
+            <div style="font-weight:bold;">Total commande : {{ totalCommande() }}€</div>
+        </div>
+            <!--  Affichage des plateaux -->
+        <div class="Box">
+            <div class="p-5 " *ngFor="let boxe of Boxes ; let index = index"  >
+                <div class="p-3" class="bg-light border border-primary">
+                    <a ><img class="Menu" src="assets/images_boxes/{{boxe.image}}.webp"/></a>
+                </div>
+                <div class="p-3" > 
+                    <span class=Itemitle> {{boxe.nom}}</span>
+                </div>
+                <div class="p-3" > 
+                    <span class=Itemitle> {{boxe.prix}}€ | {{boxe.pieces}} pièces</span>
+                </div>
+                <div class="has-text-centered">
+                    <button class="button is-link" (click)="plus(index)">+</button>
+                    <button class="button is-link" (click)="affModal(index)">Détails</button>
+                    <button class="button is-link" (click)="moins(index)">-</button>
+                </div>
+        </div>
+  </div>
+
+  <!-- Détails du plateau quand affModal est activé -->
+  <div class="modal is-active" *ngIf="showModal">
+        <div class="modal-background"></div>
+            <div class="modal-content">
+                <h1 class="title is-3" style="color:azure;">{{boxe.nom}}</h1>
+                <img src="assets/images_boxes/{{boxe.image}}.webp" /><br />
+                <h3 style="color:yellow;">Nombre de pièces :</h3> <p style="color: white ;">{{boxe.pieces}}</p>
+                <h3 style="color:yellow;">Saveurs :</h3> <p style="color: white ;">{{boxe.saveurs}} </p>
+                <h3 style="color:yellow;">Compositions :</h3>
+                <p style="color: white ;" *ngFor="let boxe of boxe.composition " >{{boxe.nom}}, {{boxe.quantite}}  </p>
+                
+                <br />
+                <button class="button is-primary" (click)="affModal(0)">Fermer</button>
+            </div>
+    
+        </div>
+   </div> 
+    
+</section>
+ 
+
+ 
+
+
+  

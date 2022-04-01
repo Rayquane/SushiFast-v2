@@ -1,0 +1,27 @@
+<section>
+    <div class="container">
+        <div fxFlex.gt-xs="30%">
+            <h1 class="title is-3">Commande</h1>
+            <table class="table is-striped center">
+                <thead>
+                    <tr>
+                        <th>Plateau</th>
+                        <th>prix</th>
+                        <th>quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elem of commande; let index = index">
+                        <td>{{elem.nomPlateau}}</td>
+                        <td>{{elem.prix}}€</td>
+                        <td>{{elem.quantite}}</td>
+
+                    </tr>
+                </tbody>
+            </table>
+    
+            <div style="font-weight:bold;">Total commande : {{ commande  }}</div>
+        </div>
+        </div>
+        
+</section>
