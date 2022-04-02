@@ -8,6 +8,41 @@
 - A la racine du projet, exécuter la commande ```ng serve``` pour lancer le serveur
 - Exécuter ensuite, toujours à la racine, la commande ```json-server --watch backend/database.json``` pour lancer l’API
 
+## Rooting
+
+La configuration des routes dans le fichier app.module.ts
+```typescript
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'rgpd', component: RgpdComponent },
+  { path: 'panier', component: PanierComponent},
+];
+```
+
+Affichage de l'application pour chaque page
+```html
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+```
+
+Configuration de l'application, contenant le titre et le rooting de l'application
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>SushiShop</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+```
+
 ## Header
 
 Le composant header est une barre de navigation. Il apparaît en haut de n'importe quelle page de l'application. Cette barre de navigation contient :
