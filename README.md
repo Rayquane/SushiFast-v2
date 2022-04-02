@@ -14,6 +14,9 @@ Le composant header est une barre de navigation. Il apparaît en haut de n'impor
 - le lien vers l'accueil de l'application
 - le lien vers le panier de l'application
 
+Code de header.component.html
+![screenshot](https://user-images.githubusercontent.com/78152375/161381844-a94f0b23-6c2d-41ab-a645-c91a69bd7953.PNG)
+
 ## Home
 
 Le composant home contient :
@@ -25,6 +28,11 @@ Le composant home contient :
 ## Footer
 
 Le composant footer contient seulement un lien vers les mentions légales. Il apparaît en bas de n'importe quelle page de l'application.
+
+![screenshot](https://user-images.githubusercontent.com/78152375/161381838-c4209c3a-f6b8-489f-a918-599a3fdfbedb.PNG)
+
+Code du footer.component.html
+![screenshot](https://user-images.githubusercontent.com/78152375/161381843-f0f88ab4-0400-4a54-a787-82aadee9a35d.PNG)
 
 ## RGPD
 
