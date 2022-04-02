@@ -65,7 +65,7 @@ Extrait de la page
 
 ## Affichage des menus
 
-Les menus sont affichés grâce à une interface exportée.
+Les menus sont affichables grâce à une interface exportée.
 
 ```typescript
 //Extrait de boxes.service.ts
@@ -91,6 +91,27 @@ Et grâce à l'utilisation de l'API.
     );
   }
   ```
+  
+  Ils sont ensuite affichés dans la vue.
+  
+  ```html
+<!--Extrait de home.component.html-->
+
+ <!--  Affichage des menus -->
+        <div class="Box">
+            <div class="p-5 " *ngFor="let boxe of Boxes ; let index = index"  >
+                <div class="p-3" class="bg-light border border-primary">
+                    <a ><img class="Menu" src="assets/images_boxes/{{boxe.image}}.webp"/></a>
+                </div>
+              <!-- Nom du menu -->
+                <div class="p-3" > 
+                    <span class=Itemitle> {{boxe.nom}}</span>
+                </div>
+              <!-- Prix du menu -->
+                <div class="p-3" > 
+                    <span class=Itemitle> {{boxe.prix}}€ | {{boxe.pieces}} pièces</span>
+                </div>
+```
   
   ## Affichage de la commande
   
