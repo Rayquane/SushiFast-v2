@@ -160,3 +160,73 @@ Elle est ensuite utilisée pour la vue du composant Home.
             <div style="font-weight:bold;">Total commande : {{ totalCommande() }}€</div>
         </div>
 ```
+
+## Bouton +
+
+Le bouton + permet de rajouter un menu à la commande. On utilise alors la fonction plus.
+
+```typescript
+plus(index: number) {
+    
+    this.commande = JSON.parse(localStorage.getItem('SushiCommande') || '[]');
+    let ajout = false;
+    this.commande.forEach(elem=> {
+      if (elem.id ==  this.Boxes[index].id) {
+        elem.quantite++;
+        ajout = true;
+      }
+    });
+
+    if (!ajout) {
+      let uneLigne = new LigneCommande(this.Boxes[index].id, this.Boxes[index].nom,1, this.Boxes[index].prix);
+      this.commande.push(uneLigne);
+      console.log("Plus :" + index + this.Boxes[index].nom);
+    }
+
+    let tabItems = JSON.stringify(this.commande);
+    localStorage.setItem('SushiCommande', tabItems);
+    
+  }
+```
+
+
+## Affichage des détails
+
+L'affichage des détails sur les menus se fait grâce à la fonction affModal.
+
+```typescript
+//Extrait de home.component.ts
+
+ //Fonction pour afficher les détails de chaque menu
+  affModal(i: number) {
+    if (this.showModal) {
+      this.showModal = false;
+    } else {
+      console.log("Modal indice :" + i);    
+      console.log("Modal nom plateau :" + this.Boxes[i].nom);
+      this.boxe = this.Boxes[i];
+      this.showModal = true;
+    }
+  }
+  ```
+  La fonction affModal est ensuite utilisée dans la vue, en appuyant sur le bouton Détails.
+  
+  ```html
+ <!-- Détails du plateau quand affModal est activé -->
+  <div class="modal is-active" *ngIf="showModal">
+        <div class="modal-background"></div>
+            <div class="modal-content">
+                <h1 class="title is-3" style="color:azure;">{{boxe.nom}}</h1>
+                <img src="assets/images_boxes/{{boxe.image}}.webp" /><br />
+                <h3 style="color:yellow;">Nombre de pièces :</h3> <p style="color: white ;">{{boxe.pieces}}</p>
+                <h3 style="color:yellow;">Saveurs :</h3> <p style="color: white ;">{{boxe.saveurs}} </p>
+                <h3 style="color:yellow;">Compositions :</h3>
+                <p style="color: white ;" *ngFor="let boxe of boxe.composition " >{{boxe.nom}}, {{boxe.quantite}}</p>
+                <br />
+              <!-- Bouton pour fermer les détails -->
+                <button class="button is-primary" (click)="affModal(0)">Fermer</button>
+            </div>
+        </div>
+   </div> 
+```
+
