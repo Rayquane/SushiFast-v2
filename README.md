@@ -10,13 +10,13 @@
 
 ## Header
 
-Le composant Header est une barre de navigation. Il apparaît en haut de n'importe quelle page de l'application. Cette barre de navigation contient :
+Le composant header est une barre de navigation. Il apparaît en haut de n'importe quelle page de l'application. Cette barre de navigation contient :
 - le lien vers l'accueil de l'application
 - le lien vers le panier de l'application
 
 ## Home
 
-Le composant Home contient :
+Le composant home contient :
 - les menus
 - la commande, listant les menus ajoutés grâce au bouton +
 - les détails des menus, affichés grâce au bouton Détails (affModal)
