@@ -31,6 +31,18 @@ Le composant home contient :
 - les détails des menus, affichés grâce au bouton Détails (affModal)
 - le bouton +, pour ajouter un menu à la commande
 
+Image des menus sur la page
+
+![screenshot]()
+
+Image du tableau de la commande
+
+![screenshot]()
+
+Image des détails lorsque l'on appuie sur le bouton "Détails"
+
+![screenshot]()
+
 ## Footer
 
 Le composant footer contient seulement un lien vers les mentions légales. Il apparaît en bas de n'importe quelle page de l'application.
@@ -50,3 +62,80 @@ Le composant rgpd contient la page où sont écrites les mentions légales.
 Extrait de la page
 
 ![screenshot](https://user-images.githubusercontent.com/78152375/161385663-6bf58df6-7424-4425-90d3-16c8e66f352e.PNG)
+
+## Affichage des menus
+
+Les menus sont affichés grâce à une interface exportée.
+
+```typescript
+//Extrait de boxes.service.ts
+
+export interface Boxes {
+  id: number;
+  name: string;
+  piece: number;
+  prix: number;
+  saveur: string;
+  }
+  ```
+
+Et grâce à l'utilisation de l'API.
+
+```typescript
+//Extrait de boxes.service.ts
+
+// Interrogation de l'API pour afficher les menus
+  getBoxes(): Observable<any> {
+    return this.http.get<any>(urlrest + '/boxes').pipe(
+    catchError(this.handleError)
+    );
+  }
+  ```
+  
+  ## Affichage de la commande
+  
+  Ici aussi, une interface est exportée.
+  
+  ```typescript
+  //Extrait de ligne-commande.service.ts
+  
+  //La classe contient les informations retournées par une requête.
+
+export class LigneCommande {
+    constructor(
+        public id: number,
+        public nomPlateau: String,
+        public quantite: number,
+        public prix: number
+        
+    )
+    {}
+   
+}
+```
+
+Elle est ensuite utilisée pour la vue du composant Home.
+```html
+<section class="section">
+    <div class="container">
+        <div fxFlex.gt-xs="30%">
+            <h1 class="title is-3">Commande</h1>
+            <table class="table is-striped center">
+                <thead>
+                    <tr>
+                        <th>Plateau</th>
+                        <th>Prix</th>
+                        <th>Quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let elem of commande; let index = index">
+                        <td>{{elem.nomPlateau}}</td>
+                        <td>{{elem.prix}}€</td>
+                        <td>{{elem.quantite}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="font-weight:bold;">Total commande : {{ totalCommande() }}€</div>
+        </div>
+```
