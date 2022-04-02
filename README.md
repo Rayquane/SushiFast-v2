@@ -115,6 +115,8 @@ Et grâce à l'utilisation de l'API.
   
   ## Affichage de la commande
   
+  ### Tableau
+  
   Ici aussi, une interface est exportée.
   
   ```typescript
@@ -161,7 +163,24 @@ Elle est ensuite utilisée pour la vue du composant Home.
         </div>
 ```
 
-## Bouton +
+### Total de la commande
+
+Pour calculer le total de la commande, on utilise la fonction totalCommande.
+
+```typescript
+// Fonction pour calculer le total des commandes
+  totalCommande(){
+    let total=0.0;
+    this.commande.forEach(elem => {
+     total=total+(elem.prix*elem.quantite); 
+    });
+    return total
+  }
+```
+
+## Les boutons des menus
+
+### Bouton +
 
 Le bouton + permet de rajouter un menu à la commande. On utilise alors la fonction plus.
 
@@ -190,7 +209,7 @@ plus(index: number) {
 ```
 
 
-## Affichage des détails
+### Bouton Détails
 
 L'affichage des détails sur les menus se fait grâce à la fonction affModal.
 
@@ -209,6 +228,7 @@ L'affichage des détails sur les menus se fait grâce à la fonction affModal.
     }
   }
   ```
+  
   La fonction affModal est ensuite utilisée dans la vue, en appuyant sur le bouton Détails.
   
   ```html
@@ -230,3 +250,15 @@ L'affichage des détails sur les menus se fait grâce à la fonction affModal.
    </div> 
 ```
 
+### Affichage des boutons
+
+Les boutons + et Détails sont ensuite affichés dans la vue du composant Home. En cliquant sur le bouton, la fonction attribuée est activée.
+
+```html
+<div class="has-text-centered">
+                    <!-- Boutons sous chaque menu -->
+                    <button class="button is-link" (click)="plus(index)">+</button>
+                    <button class="button is-link" (click)="affModal(index)">Détails</button>
+                    <button class="button is-link" (click)="moins(index)">-</button>
+                </div>
+```
