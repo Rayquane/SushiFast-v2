@@ -33,15 +33,15 @@ Le composant home contient :
 
 Image des menus sur la page
 
-![screenshot]()
+![screenshot](https://user-images.githubusercontent.com/78152375/161388084-81c9aedc-b1a2-4829-a6f2-2149b0f0ffbd.PNG)
 
 Image du tableau de la commande
 
-![screenshot]()
+![screenshot](https://user-images.githubusercontent.com/78152375/161388091-3cddc109-1398-40cf-bc33-0f348eccb707.PNG)
 
 Image des détails lorsque l'on appuie sur le bouton "Détails"
 
-![screenshot]()
+![screenshot](https://user-images.githubusercontent.com/78152375/161388097-f55566db-6982-436a-8194-3ece9ee790a5.PNG)
 
 ## Footer
 
