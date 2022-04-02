@@ -11,8 +11,13 @@
 ## Header
 
 Le composant header est une barre de navigation. Il apparaît en haut de n'importe quelle page de l'application. Cette barre de navigation contient :
+- le titre de l'application
 - le lien vers l'accueil de l'application
 - le lien vers le panier de l'application
+
+Header sur l'application
+
+![screenshot](https://user-images.githubusercontent.com/78152375/161386049-ebd55934-204e-4901-8836-11aab82757a1.PNG)
 
 Code de header.component.html (vue)
 
