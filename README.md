@@ -1,5 +1,17 @@
 # SushiFast-v2
 
+# Projet-Sushi
+
+## Présentation
+SushiShop est une application Angular visant à permettre à un client de commander un plat de nourriture à distance.
+
+![screenshot](https://user-images.githubusercontent.com/78152375/145978823-aac7d44e-eec8-4d3f-aa8f-e3ae9f0435bc.png)
+
+## Fonctionnement
+L’appli fonctionne à l’aide de l’API, qui s’affiche sur la vue HTML.
+
+![screenshot](https://user-images.githubusercontent.com/78152375/145639775-a81ec115-d56f-47c5-a40a-49950525e735.png)
+
 ## Installation
 
 - Créer un projet Angular à l’aide de la commande ```ng new nomduprojet``` avec « yes » pour le rooting et « css » comme format de stylesheet
@@ -297,3 +309,14 @@ Les boutons + et Détails sont ensuite affichés dans la vue du composant Home. 
                     <button class="button is-link" (click)="moins(index)">-</button>
                 </div>
 ```
+
+## Evil user story
+
+![screenshot](https://user-images.githubusercontent.com/78152375/154741054-536cfdf5-573c-4ae9-a30a-1306abaa90dd.PNG)
+
+
+
+Collaborateurs :
+- DE SOUSA Océane
+- FORNARELLI Evan
+- BERCIER Ethan
