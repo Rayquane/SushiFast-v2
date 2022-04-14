@@ -10,7 +10,7 @@ SushiShop est une application Angular visant à permettre à un client de comman
 ## Fonctionnement
 L’appli fonctionne à l’aide de l’API, qui s’affiche sur la vue HTML.
 
-![screenshot](https://user-images.githubusercontent.com/78152375/145639775-a81ec115-d56f-47c5-a40a-49950525e735.png)
+![screenshot](https://user-images.githubusercontent.com/78152375/163337668-099c6240-1fb4-4c8c-a04a-ece014ad30d3.jpeg)
 
 ## Installation
 
